@@ -18,13 +18,7 @@ const Starter: React.FC<IStarterProps> = ({ setUser, light, setLight }) => {
 
   const fetchUser = async () => {
     const response = await fetch(
-      `https://api.github.com/users/${search || "octocat"}`,
-      {
-        headers: {
-          Authorization: "Bearer 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",
-          "X-GitHub-Api-Version": "2022-11-28",
-        },
-      }
+      `https://api.github.com/users/${search || "octocat"}`
     );
     console.log("API");
     if (response.ok) {
@@ -59,9 +53,7 @@ const Starter: React.FC<IStarterProps> = ({ setUser, light, setLight }) => {
             {light ? "DARK" : "LIGHT"}
           </span>
           <img
-            src={`${
-              light ? "/assets/icon-moon.svg" : "/assets/icon-sun.svg"
-            }`}
+            src={`${light ? "/assets/icon-moon.svg" : "/assets/icon-sun.svg"}`}
             alt=""
             onClick={() => {
               setLight(!light);
